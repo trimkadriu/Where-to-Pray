@@ -14,7 +14,7 @@ Ext.application({
     name: 'KuTeFalem',
 
     requires: [
-        'Ext.MessageBox'
+        'Ext.MessageBox', 'KuTeFalem.util.Geolocation'
     ],
 
     views: [
@@ -40,6 +40,7 @@ Ext.application({
     },
 
     launch: function() {
+        geoLocation = Ext.create('KuTeFalem.util.Geolocation');
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
