@@ -1,7 +1,11 @@
 Ext.define('KuTeFalem.view.MosqueMap', {
     extend: 'Ext.Container',
-    requires: ['Ext.Map'],
     xtype: 'mosquemap',
+    id: 'mosqueMap',
+
+    requires: [
+        'Ext.Map'
+    ],
 
     config: {
         layout: {

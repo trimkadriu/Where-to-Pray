@@ -1,7 +1,8 @@
 Ext.define('KuTeFalem.util.Geolocation', {
     extend: 'Ext.util.Geolocation',
-    autoUpdate: true,
     xtype: 'mosquegeolocation',
+
+    autoUpdate: true,
     listeners: {
         locationupdate: function(geo) {
             console.log('New latitude: ' + geo.getLatitude());

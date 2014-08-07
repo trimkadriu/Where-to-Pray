@@ -18,7 +18,7 @@ Ext.application({
     ],
 
     views: [
-        'Main', 'MosqueMap'
+        'Main', 'MosqueMap', 'Search'
     ],
 
     icon: {
