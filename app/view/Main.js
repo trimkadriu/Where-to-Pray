@@ -1,10 +1,14 @@
 Ext.define('KuTeFalem.view.Main', {
     extend: 'Ext.Panel',
     xtype: 'main',
+    id: 'mainPanel',
+
     requires: [
         'Ext.TitleBar', 'KuTeFalem.view.MosqueMap'
     ],
+
     config: {
+        hideAnimation: 'slide',
         items: [
             {
                 xtype: 'titlebar',
@@ -18,8 +22,14 @@ Ext.define('KuTeFalem.view.Main', {
                         src: 'http://dummyimage.com/218x44/ffffff/00065c.png&text=LOGO'
                     },
                     {
+                        xtype: 'button',
                         iconCls: 'search',
-                        align: 'right'
+                        align: 'right',
+                        handler: function(e, eOpts) {
+                            Ext.getCmp('mainPanel').hide();
+                            Ext.Viewport.add(Ext.create('KuTeFalem.view.Search'))
+                            Ext.getCmp('searchList').show();
+                        }
                     }
                 ]
             },
