@@ -4,7 +4,7 @@ Ext.define('KuTeFalem.view.Main', {
     id: 'mainPanel',
 
     requires: [
-        'Ext.TitleBar', 'KuTeFalem.view.MosqueMap'
+        'Ext.TitleBar', 'Ext.Img', 'KuTeFalem.view.MosqueMap'
     ],
 
     config: {
