@@ -1,3 +1,4 @@
+var CUSTOM_MAPTYPE_ID = 'Custom_MosqueMapStyle';
 Ext.define('KuTeFalem.view.MosqueMap', {
     extend: 'Ext.Container',
     xtype: 'mosquemap',
@@ -21,46 +22,49 @@ Ext.define('KuTeFalem.view.MosqueMap', {
                 flex: 1,
                 useCurrentLocation: true,
                 mapOptions: {
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    zoom: 13,
-                    overviewMapControl: false,
-                    panControl: false,
-                    rotateControl: false,
-                    scaleControl: false,
-                    navigationControl: false,
-                    zoomControl: false,
-                    mapTypeControl: false,
-                    streetViewControl: false,
+                    mapTypeId: CUSTOM_MAPTYPE_ID,
+                    //mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    zoom: 18,
                     disableDefaultUI: true,
                     center: new google.maps.LatLng(42.6503466, 21.1522471)
                 }
             }
-        ],
-        listeners: {
-
-        }
+        ]
     },
 
     initialize: function(eOpts) {
-        map = Ext.getCmp('myMosqueMap').getMap();
-        //Get GeoLocation
+        var map = Ext.getCmp('myMosqueMap').getMap();
+
+        // GEOLOCATION
+        // ============================================
         console.log(geoLocation.getLatitude() + '--' + geoLocation.getLongitude());
 
+        // MARKERS
+        // ============================================
         var marker = new google.maps.Marker({
             position: new google.maps.LatLng(42.6503466, 21.1522471),
             map: map,
             title: 'Hello World!'
         });
 
-        //Draw circle on the user area
-        positionCircle = new google.maps.Circle({
+        // CIRCLE ON AREA
+        // ============================================
+        var positionCircle = new google.maps.Circle ({
             strokeColor: '#FF0000',
             strokeOpacity: 0.8,
             strokeWeight: 2,
             fillColor: '#FF0000',
             fillOpacity: 0.35,
             map: map,
-            radius: 100000
+            center: new google.maps.LatLng(42.6503466, 21.1522471),
+            radius: 50
+        });
+
+        // MAP STYLE
+        // ============================================
+        Ext.getStore('MosqueMapStyle').on('load', function(self, records) {
+            var customMapType = new google.maps.StyledMapType(records[0].data.style, {name: 'MosqueMap Style'});
+            map.mapTypes.set(CUSTOM_MAPTYPE_ID, customMapType);
         });
     }
 });

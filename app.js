@@ -21,6 +21,14 @@ Ext.application({
         'Main', 'MosqueMap', 'Search'
     ],
 
+    models: [
+        'MosqueMapStyle'
+    ],
+
+    stores: [
+        'MosqueMapStyle'
+    ],
+
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
@@ -40,7 +48,9 @@ Ext.application({
     },
 
     launch: function() {
+        // Load GeoLocation object with application initialization
         geoLocation = Ext.create('KuTeFalem.util.Geolocation');
+
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
 
