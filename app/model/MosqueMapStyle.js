@@ -7,4 +7,4 @@ Ext.define('KuTeFalem.model.MosqueMapStyle', {
             {name: 'style', type: 'object'}
         ]
     }
-})
+});

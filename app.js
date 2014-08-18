@@ -48,8 +48,11 @@ Ext.application({
     },
 
     launch: function() {
+        // Load application config
+        AppConfig = Ext.application.config;
+
         // Load GeoLocation object with application initialization
-        geoLocation = Ext.create('KuTeFalem.util.Geolocation');
+        GeoLocation = Ext.create('KuTeFalem.util.Geolocation');
 
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();

@@ -6,7 +6,7 @@ Ext.define('KuTeFalem.store.MosqueMapStyle', {
         model: 'KuTeFalem.model.MosqueMapStyle',
         proxy: {
             type: 'ajax',
-            url: 'app/data/MosqueMapStyle.json',
+            url: 'data/mosque.map-style.json',
             reader: {
                 type: 'json'
             }
