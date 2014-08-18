@@ -19,30 +19,31 @@ Ext.define('KuTeFalem.view.MosqueMap', {
             {
                 id: 'myMosqueMap',
                 xtype: 'map',
-                flex: 1,
+                flex: 2,
                 useCurrentLocation: true,
                 mapOptions: {
                     mapTypeId: CUSTOM_MAPTYPE_ID,
                     //mapTypeId: google.maps.MapTypeId.ROADMAP,
                     zoom: 18,
-                    disableDefaultUI: true,
-                    center: new google.maps.LatLng(42.6503466, 21.1522471)
+                    disableDefaultUI: true
                 }
             }
         ]
     },
 
-    initialize: function(eOpts) {
+    initialize: function() {
         var map = Ext.getCmp('myMosqueMap').getMap();
 
-        // GEOLOCATION
+        // GEOLOCATION - POSITION
         // ============================================
-        console.log(geoLocation.getLatitude() + '--' + geoLocation.getLongitude());
+        console.log(GeoLocation.getLatitude() + '--' + GeoLocation.getLongitude());
+        var position = new google.maps.LatLng(42.6503466, 21.1522471);
+        map.setCenter(position);
 
         // MARKERS
         // ============================================
         var marker = new google.maps.Marker({
-            position: new google.maps.LatLng(42.6503466, 21.1522471),
+            position: position,
             map: map,
             title: 'Hello World!'
         });
@@ -56,7 +57,7 @@ Ext.define('KuTeFalem.view.MosqueMap', {
             fillColor: '#FF0000',
             fillOpacity: 0.35,
             map: map,
-            center: new google.maps.LatLng(42.6503466, 21.1522471),
+            center: position,
             radius: 50
         });
 
