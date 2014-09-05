@@ -4,7 +4,7 @@ Ext.define('KuTeFalem.model.MosqueMapStyle', {
     config: {
         fields: [
             {name: 'mapTypeId', type: 'string'},
-            {name: 'style', type: 'object'}
+            {name: 'options', type: 'object'}
         ]
     }
 });
