@@ -18,83 +18,56 @@ Ext.define('KuTeFalem.view.MosqueMap', {
             {
                 id: 'myMosqueMap',
                 xtype: 'map',
-                flex: 2
+                flex: 2,
+                useCurrentLocation: true
             }
         ]
     },
 
-    show: function() {
-        var map = Ext.getCmp('myMosqueMap').getMap();
-        //this.mapInitialize(map);
+    initialize: function() {
+        Ext.getStore('MosqueMapStyle').on('load', this.mapInitialize, this);
+    },
+
+    mapInitialize: function(self, records) {
+        var mapCmp = Ext.getCmp('myMosqueMap');
+        var options = records[0].data.options;
 
         // GEOLOCATION - POSITION
         // ============================================
-        console.log(GeoLocation.getLatitude() + '--' + GeoLocation.getLongitude());
-        var position = new google.maps.LatLng(42.6503466, 21.1522471);
-        //map.setCenter(position);
+        var lat = GeoLocation.getLatitude(), lng = GeoLocation.getLongitude();
+        console.log(lat + '--' + lng);
+        if(lat != null && lng != null) {
+            // Users geolocation position
+            var position = new google.maps.LatLng(-33.867139, 151.207114);
+            options.center = position;
 
-        // MARKERS
-        // ============================================
-        var marker = new google.maps.Marker({
-            position: position,
-            map: map,
-            title: 'Hello World!'
-        });
-
-        // CIRCLE ON AREA
-        // ============================================
-        var positionCircle = new google.maps.Circle ({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
-            map: map,
-            center: position,
-            radius: 50
-        });
-
-        Ext.getStore('MosqueMapStyle').on('load', function(self, records) {
-            // MAP OPTIONS & STYLES
+            // CIRCLE ON AREA
             // ============================================
-            map.setOptions(records[0].data.options);
-            map.setCenter(new google.maps.LatLng(0, 0));
-        });
-        this.setPos();
-    },
-
-    mapInitialize: function(map) {
-        // GEOLOCATION - POSITION
-        // ============================================
-        console.log(GeoLocation.getLatitude() + '--' + GeoLocation.getLongitude());
-        var position = new google.maps.LatLng(42.6503466, 21.1522471);
-        map.setCenter(position);
+            var positionCircle = new google.maps.Circle ({
+                strokeColor: '#FF0000',
+                strokeOpacity: 0.8,
+                strokeWeight: 2,
+                fillColor: '#FF0000',
+                fillOpacity: 0.35,
+                map: mapCmp.getMap(),
+                center: position,
+                radius: 50
+            });
+        }
+        else {
+            Ext.Msg.alert('Gabim!', 'Lokacioni juaj nuk mund te gjindet. Ju lutem kontrollone pajisjen tuaj per sherbimin e lokacionit.', Ext.emptyFn);
+        }
 
         // MARKERS
         // ============================================
         var marker = new google.maps.Marker({
-            position: position,
-            map: map,
+            position: options.center,
+            map: mapCmp.getMap(),
             title: 'Hello World!'
         });
 
-        // CIRCLE ON AREA
+        // MAP OPTIONS & STYLES
         // ============================================
-        var positionCircle = new google.maps.Circle ({
-            strokeColor: '#FF0000',
-            strokeOpacity: 0.8,
-            strokeWeight: 2,
-            fillColor: '#FF0000',
-            fillOpacity: 0.35,
-            map: map,
-            center: position,
-            radius: 50
-        });
-    },
-
-    setPos: function() {
-        var map = Ext.getCmp('myMosqueMap').getMap();
-        console.log(map);
-        map.setCenter(new google.maps.LatLng(0, 0));
+        mapCmp.setMapOptions(options);
     }
 });
