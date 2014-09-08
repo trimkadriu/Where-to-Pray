@@ -6,7 +6,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/index.html" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1409841046212" ignored="false" />
     <file path="/Main.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1408371537893" ignored="false" />
-    <file path="/MosqueMap.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1409919576430" ignored="false" />
+    <file path="/MosqueMap.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1410170175607" ignored="false" />
     <file path="/app.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1408372445486" ignored="false" />
     <file path="/geolocation.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1407334670490" ignored="false" />
     <file path="/Search.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1407747725605" ignored="false" />
@@ -16,7 +16,7 @@
     <file path="/MosqueMapStyle.json" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1408297442297" ignored="false" />
     <file path="/Mosque.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1408372398484" ignored="false" />
     <file path="/app.config.js" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1408371359174" ignored="false" />
-    <file path="/mosque.map-style.json" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1409904453013" ignored="false" />
+    <file path="/mosque.map-style.json" changelist="7a905e60-f399-4b24-938b-3c32ea555fbb" time="1410165935705" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +48,7 @@
       <file leaf-file-name="MosqueMap.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/view/MosqueMap.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="63" column="6" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.6915254">
+            <state line="68" column="31" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.8079096">
               <folding />
             </state>
           </provider>
@@ -84,7 +84,7 @@
       <file leaf-file-name="mosque.map-style.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data/mosque.map-style.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="13" selection-start="728" selection-end="728" vertical-scroll-proportion="-18.961538">
+            <state line="3" column="8" selection-start="61" selection-end="61" vertical-scroll-proportion="-1.9615384">
               <folding />
             </state>
           </provider>
@@ -110,20 +110,20 @@
       </file>
       <file leaf-file-name="data.txt" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data.txt">
-          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-            <state />
-          </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="21" selection-start="238" selection-end="238" vertical-scroll-proportion="-6.8">
+            <state line="10" column="21" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
               <folding />
             </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="4" selection-start="1697" selection-end="1697" vertical-scroll-proportion="-36.615383">
+            <state line="56" column="4" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -153,8 +153,8 @@
         <option value="$PROJECT_DIR$/data.txt" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/app/model/MosqueMapStyle.js" />
-        <option value="$PROJECT_DIR$/app/view/MosqueMap.js" />
         <option value="$PROJECT_DIR$/data/mosque.map-style.json" />
+        <option value="$PROJECT_DIR$/app/view/MosqueMap.js" />
       </list>
     </option>
   </component>
@@ -323,8 +323,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="preferences.keymap" />
     <property name="FullScreen" value="false" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="Apache Localhost" serverId="d2d9a7cf-2564-480e-9ce7-27127675f2da">
     <servers>
@@ -392,7 +392,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20170757" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20384204" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -480,33 +480,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/Search.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="21" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="3" column="21" selection-start="109" selection-end="109" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="22" selection-start="1" selection-end="22" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="22" selection-start="1" selection-end="22" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data.txt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="21" selection-start="238" selection-end="238" vertical-scroll-proportion="-6.8">
+        <state line="10" column="21" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/util/geolocation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="3" selection-start="562" selection-end="562" vertical-scroll-proportion="0.32655367">
-          <folding />
-        </state>
+        <state line="17" column="3" selection-start="562" selection-end="562" vertical-scroll-proportion="0.32655367" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/store/Mosque.js">
@@ -525,16 +519,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="4" selection-start="1697" selection-end="1697" vertical-scroll-proportion="-36.615383">
+        <state line="56" column="4" selection-start="1697" selection-end="1697" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/packager.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="20" selection-start="993" selection-end="993" vertical-scroll-proportion="0.7322468">
-          <folding />
-        </state>
+        <state line="37" column="20" selection-start="993" selection-end="993" vertical-scroll-proportion="0.7322468" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
@@ -567,14 +559,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/data/mosque.map-style.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="13" selection-start="728" selection-end="728" vertical-scroll-proportion="-18.961538">
+        <state line="3" column="8" selection-start="61" selection-end="61" vertical-scroll-proportion="-1.9615384">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/view/MosqueMap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="63" column="6" selection-start="1774" selection-end="1774" vertical-scroll-proportion="0.6915254">
+        <state line="68" column="31" selection-start="2056" selection-end="2056" vertical-scroll-proportion="0.8079096">
           <folding />
         </state>
       </provider>
