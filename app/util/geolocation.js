@@ -7,6 +7,7 @@ Ext.define('KuTeFalem.util.Geolocation', {
         locationupdate: function(geo) {
             console.log('New latitude: ' + geo.getLatitude());
         },
+
         locationerror: function(geo, bTimeout, bPermissionDenied, bLocationUnavailable, message) {
             if(bTimeout){
                 console.log('Timeout occurred.' + message);

@@ -38,10 +38,17 @@ Ext.define('KuTeFalem.view.Main', {
             },
             {
                 xtype: 'button',
-                iconCls: 'locate',
+                iconCls: 'settings',
                 ui: 'action',
                 bottom: 20,
                 left: -5
+            },
+            {
+                xtype: 'button',
+                iconCls: 'locate',
+                ui: 'action',
+                bottom: 20,
+                right: 20
             }
         ]
     }

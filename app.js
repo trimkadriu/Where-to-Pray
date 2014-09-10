@@ -14,7 +14,7 @@ Ext.application({
     name: 'KuTeFalem',
 
     requires: [
-        'Ext.MessageBox', 'KuTeFalem.util.Geolocation'
+        'Ext.MessageBox', 'KuTeFalem.util.Geolocation', 'KuTeFalem.config.Config'
     ],
 
     views: [
@@ -22,11 +22,11 @@ Ext.application({
     ],
 
     models: [
-        'MosqueMapStyle'
+        'MosqueMapStyle', 'LocalizationText'
     ],
 
     stores: [
-        'MosqueMapStyle'
+        'MosqueMapStyle', 'LocalizationText'
     ],
 
     icon: {
@@ -49,7 +49,7 @@ Ext.application({
 
     launch: function() {
         // Load application config
-        AppConfig = Ext.application.config;
+        AppConfig = KuTeFalem.config.Config;
 
         // Load GeoLocation object with application initialization
         GeoLocation = Ext.create('KuTeFalem.util.Geolocation');
@@ -59,6 +59,10 @@ Ext.application({
 
         // Initialize the main view
         Ext.Viewport.add(Ext.create('KuTeFalem.view.Main'));
+    },
+
+    restartApplication: function() {
+        window.location.reload();
     },
 
     onUpdated: function() {

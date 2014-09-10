@@ -1,4 +1,4 @@
-Ext.define('KuTeFalem.store.Mosque', {
+Ext.define('KuTeFalem.store.Mosques', {
     extend: 'Ext.data.Store',
 
     config: {
