@@ -15,5 +15,21 @@ Ext.define('KuTeFalem.util.Geolocation', {
                 console.log('Error occurred.' + message);
             }
         }
+    },
+
+    geoLocationNotAvailable: function() {
+        new Ext.MessageBox().show({
+            id: 'mymessage',
+            title: AppConfig.getText('error'),
+            message: AppConfig.getText('geoLocationIsNotAvailable'),
+            scope: this,
+            buttons : [
+                {
+                    itemId : 'ok',
+                    text   : AppConfig.getText('ok')
+                }
+            ],
+            fn: Ext.emptyFn()
+        });
     }
 });
