@@ -19,7 +19,7 @@ Ext.define('KuTeFalem.view.MosqueMap', {
                 id: 'mosqueMap',
                 xtype: 'map',
                 flex: 2,
-                useCurrentLocation: true
+                useCurrentLocation: false
             }
         ]
     },
@@ -43,27 +43,24 @@ Ext.define('KuTeFalem.view.MosqueMap', {
 
         // GET GEOLOCATION - POSITION
         // ============================================
-        var lat = GeoLocation.getLatitude(), lng = GeoLocation.getLongitude();
-        //lat=42.6591062;lng=21.1617279; //only for simulation
-        if(lat != null && lng != null) {
+        GeoLocation.getCurrentPosition(function(geoLocation) {
+            var lat = geoLocation.coords.latitude, lng = geoLocation.coords.longitude;
+
             // SET USERS GEOLOCATION POSITION
             // ============================================
             var position = new google.maps.LatLng(lat, lng);
             mapOptions.center = position;
             mapOptions.zoom = 18;
+            mapCmp.setMapOptions(mapOptions);
 
             // CIRCLE ON AREA
             // ============================================
             var circleOptions = records[0].data.circleOptions;
             circleOptions.center = position;
+            circleOptions.radius = geoLocation.coords.accuracy;
             circleOptions.map = map;
             var userGeoLocationCircle = new google.maps.Circle(circleOptions);
-        }
-        // GEOLOCATION IS NOT AVAILABLE !
-        // ============================================
-        else {
-            mapCmp.on('maprender', GeoLocation.geoLocationNotAvailable);
-        }
+        });
     },
 
     initializeMarkers: function(map) {

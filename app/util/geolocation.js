@@ -1,35 +1,32 @@
 Ext.define('KuTeFalem.util.Geolocation', {
-    extend: 'Ext.util.Geolocation',
-    xtype: 'mosquegeolocation',
+    singleton: true,
 
-    autoUpdate: true,
-    listeners: {
-        locationupdate: function(geo) {
-            console.log('New latitude: ' + geo.getLatitude());
-        },
-
-        locationerror: function(geo, bTimeout, bPermissionDenied, bLocationUnavailable, message) {
-            if(bTimeout){
-                console.log('Timeout occurred.' + message);
-            } else {
-                console.log('Error occurred.' + message);
-            }
-        }
+    constructor: function(config) {
+        this.initConfig(config);
+        return this;
     },
 
-    geoLocationNotAvailable: function() {
-        new Ext.MessageBox().show({
-            id: 'mymessage',
+    getCurrentPosition: function(successCallBack) {
+        Ext.device.Geolocation.getCurrentPosition({
+            success: successCallBack,
+            failure: this.getPositionFailed
+        })
+    },
+
+    getPositionFailed: function() {
+        Ext.device.Notification.show({
             title: AppConfig.getText('error'),
             message: AppConfig.getText('geoLocationIsNotAvailable'),
-            scope: this,
-            buttons : [
-                {
-                    itemId : 'ok',
-                    text   : AppConfig.getText('ok')
-                }
-            ],
-            fn: Ext.emptyFn()
+            buttons: [AppConfig.getText('ok')],
+            callback: Ext.emptyFn()
+        });
+    },
+
+    watchPosition: function(frequency, successCallBack, failureCallBack) {
+        Ext.device.GeolocationwatchPosition({
+            frequency: frequency,
+            callback: successCallBack,
+            failure: failureCallBack
         });
     }
 });

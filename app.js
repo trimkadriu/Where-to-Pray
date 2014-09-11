@@ -1,14 +1,11 @@
 /*
-    This file is generated and updated by Sencha Cmd. You can edit this file as
-    needed for your application, but these edits will have to be merged by
-    Sencha Cmd when it performs code generation tasks such as generating new
-    models, controllers or views and when running "sencha app upgrade".
+    KU TE FALEM v1.0
 
-    Ideally changes to this file would be limited and most work would be done
-    in other places (such as Controllers). If Sencha Cmd cannot merge your
-    changes and its generated code, it will produce a "merge conflict" that you
-    will need to resolve manually.
+    @Author: Trim Kadriu
+    @Email: trim.kadriu@gmail.com
+    ============================================
 */
+Ext.require(['Ext.device.Geolocation', 'Ext.device.Connection', 'Ext.device.Notification']);
 
 Ext.application({
     name: 'KuTeFalem',
@@ -52,7 +49,7 @@ Ext.application({
         AppConfig = KuTeFalem.config.Config;
 
         // Load GeoLocation object with application initialization
-        GeoLocation = Ext.create('KuTeFalem.util.Geolocation');
+        GeoLocation = KuTeFalem.util.Geolocation;
 
         // Destroy the #appLoadingIndicator element
         Ext.fly('appLoadingIndicator').destroy();
