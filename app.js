@@ -22,11 +22,11 @@ Ext.application({
     ],
 
     models: [
-        'MosqueMapStyle', 'LocalizationText'
+        'MosqueMapStyle'
     ],
 
     stores: [
-        'MosqueMapStyle', 'LocalizationText'
+        'MosqueMapStyle'
     ],
 
     icon: {

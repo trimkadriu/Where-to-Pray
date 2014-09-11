@@ -19,7 +19,7 @@ Ext.define('KuTeFalem.view.Main', {
                         xtype: 'image',
                         width: 218,
                         height: 44,
-                        src: 'http://dummyimage.com/218x44/ffffff/00065c.png&text=LOGO'
+                        src: 'resources/images/logo.png'
                     },
                     {
                         xtype: 'button',

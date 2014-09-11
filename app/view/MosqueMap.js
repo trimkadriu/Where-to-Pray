@@ -62,7 +62,7 @@ Ext.define('KuTeFalem.view.MosqueMap', {
         // GEOLOCATION IS NOT AVAILABLE !
         // ============================================
         else {
-            mapCmp.on('maprender', this.geoLocationNotAvailable);
+            mapCmp.on('maprender', GeoLocation.geoLocationNotAvailable);
         }
     },
 
@@ -73,22 +73,6 @@ Ext.define('KuTeFalem.view.MosqueMap', {
             position: map.getCenter(),
             map: map,
             title: 'Hello World!'
-        });
-    },
-
-    geoLocationNotAvailable: function() {
-        new Ext.MessageBox().show({
-            id: 'mymessage',
-            title: AppConfig.getText('error'),
-            message: AppConfig.getText('geoLocationIsNotAvailable'),
-            scope: this,
-            buttons : [
-                {
-                    itemId : 'ok',
-                    text   : 'Ne rregull'
-                }
-            ],
-            fn: Ext.emptyFn()
         });
     }
 });

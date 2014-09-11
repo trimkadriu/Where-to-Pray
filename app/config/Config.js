@@ -8,6 +8,17 @@ Ext.define('KuTeFalem.config.Config', {
         mapType: 'roadmap'
     },
 
+    LANGUAGE: {
+        // Language ENUMS
+        // ========================
+        EN: 'en',
+        SQ: 'sq'
+    },
+
+    // MapTypes ENUMS
+    // ========================
+    MAPTYPE: google.maps.MapTypeId,
+
     constructor: function(config) {
         this.initConfig(config);
         var language = localStorage.getItem('language');
@@ -22,38 +33,36 @@ Ext.define('KuTeFalem.config.Config', {
     },
 
     getText: function(key) {
-        var localeStore = Ext.getStore('localizationText');
-        var text = null;
-        var dataArray = localeStore.getData().items[0].data.texts;
+        var dataArray = Ext.application['locale_' + this.getLanguage()];
         for(var i = 0; i < dataArray.length; i++) {
             if(dataArray[i][key] != undefined) {
-                text = dataArray[i][key];
-                break;
+                return dataArray[i][key];
             }
         }
-        return text;
+        return null;
     },
 
     getTextByLang: function(key, language) {
-        var localeStore = Ext.getStore('localizationText');
-        var text = null;
-        var dataArray = localeStore.getData().items[0].data.texts;
+        if(language != this.LANGUAGE.EN && language != this.LANGUAGE.SQ) return null;
+        var dataArray = Ext.application['locale_' + language];
         for(var i = 0; i < dataArray.length; i++) {
             if(dataArray[i][key] != undefined) {
-                text = dataArray[i][key];
-                break;
+                return dataArray[i][key];
             }
         }
-        return text;
+        return null;
     },
 
     setDefaultLanguage: function(language) {
+        if(language != this.LANGUAGE.EN && language != this.LANGUAGE.SQ) return;
         localStorage.setItem('language', language);
-        this.config.language = language;
+        this.setLanguage = language;
     },
 
     setDefaultMapType: function(mapType) {
+        if(mapType != this.MAPTYPE.HYBRID && mapType != this.MAPTYPE.ROADMAP
+            && mapType != this.MAPTYPE.SATELLITE && mapType != this.MAPTYPE.TERRAIN) return;
         localStorage.setItem('mapType', mapType);
-        this.config.mapType = mapType;
+        this.setMapType = mapType;
     }
 });
