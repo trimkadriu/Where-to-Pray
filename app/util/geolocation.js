@@ -6,10 +6,13 @@ Ext.define('KuTeFalem.util.Geolocation', {
         return this;
     },
 
-    getCurrentPosition: function(successCallBack) {
+    getCurrentPosition: function(successCallBack, failedCallBack) {
+        var failFunction = this.getPositionFailed;
+        if(failedCallBack != undefined)
+            failFunction = failedCallBack;
         Ext.device.Geolocation.getCurrentPosition({
             success: successCallBack,
-            failure: this.getPositionFailed
+            failure: failFunction
         })
     },
 
