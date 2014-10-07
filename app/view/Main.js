@@ -4,7 +4,7 @@ Ext.define('KuTeFalem.view.Main', {
     id: 'mainPanel',
 
     requires: [
-        'Ext.TitleBar', 'Ext.Img', 'KuTeFalem.view.MosqueMap'
+        'Ext.TitleBar', 'Ext.Img', 'KuTeFalem.view.MosqueMap', 'KuTeFalem.view.Menu'
     ],
 
     config: {
@@ -13,13 +13,19 @@ Ext.define('KuTeFalem.view.Main', {
             {
                 xtype: 'titlebar',
                 docked: 'top',
+                zIndex: 100,
                 items: [
                     {
                         align: 'left',
                         xtype: 'image',
                         width: 218,
                         height: 44,
-                        src: 'resources/images/logo.png'
+                        src: 'resources/images/logo.png',
+                        listeners: {
+                            tap: function(button, e, eOpts) {
+                                Ext.Viewport.toggleMenu('left');
+                            }
+                        }
                     },
                     {
                         xtype: 'button',
@@ -38,18 +44,21 @@ Ext.define('KuTeFalem.view.Main', {
             },
             {
                 xtype: 'button',
-                iconCls: 'settings',
-                ui: 'action',
-                bottom: 20,
-                left: -5
-            },
-            {
-                xtype: 'button',
                 iconCls: 'locate',
                 ui: 'action',
                 bottom: 20,
                 right: 20
             }
-        ]
+        ],
+
+        listeners: {
+            initialize: function() {
+                var menu = Ext.create('KuTeFalem.view.Menu');
+                Ext.Viewport.setMenu(menu, {
+                    side: 'left',
+                    reveal: false
+                });
+            }
+        }
     }
 });

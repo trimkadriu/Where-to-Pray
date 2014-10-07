@@ -45,6 +45,7 @@ Ext.define('KuTeFalem.view.MosqueMap', {
         // GET GEOLOCATION - POSITION
         // ============================================
         KuTeFalem.util.Geolocation.getCurrentPosition(
+            // GeoLocation Success
             function(geoLocation) {
                 var lat = geoLocation.coords.latitude, lng = geoLocation.coords.longitude;
                 // SET USERS GEOLOCATION POSITION
@@ -62,6 +63,7 @@ Ext.define('KuTeFalem.view.MosqueMap', {
                 circleOptions.map = map;
                 var userGeoLocationCircle = new google.maps.Circle(circleOptions);
             },
+            // GeoLocation Fail
             function() {
                 mapCmp.on('maprender', function() {
                     map.setCenter(defaultPosition);
