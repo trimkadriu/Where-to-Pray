@@ -21,6 +21,7 @@
         "mapTypeId":"roadmap",
         "cluster":true,
         "geocoder":true,
+        "minZoom": 10,
         "styles":[
             {
                 "featureType":"water",
