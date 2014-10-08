@@ -39,7 +39,8 @@ Ext.define('KuTeFalem.config.Config', {
                 return dataArray[i][key];
             }
         }
-        return null;
+        console.log('---------- Please add localization message with key: [ ' + key + ' ]');
+        return key;
     },
 
     getTextByLang: function(key, language) {
@@ -50,7 +51,8 @@ Ext.define('KuTeFalem.config.Config', {
                 return dataArray[i][key];
             }
         }
-        return null;
+        console.log('---------- Please add localization message with key: [ ' + key + ' ]');
+        return key;
     },
 
     setDefaultLanguage: function(language) {
@@ -60,8 +62,7 @@ Ext.define('KuTeFalem.config.Config', {
     },
 
     setDefaultMapType: function(mapType) {
-        if(mapType != this.MAPTYPE.HYBRID && mapType != this.MAPTYPE.ROADMAP
-            && mapType != this.MAPTYPE.SATELLITE && mapType != this.MAPTYPE.TERRAIN) return;
+        if(mapType != this.MAPTYPE.HYBRID && mapType != this.MAPTYPE.ROADMAP) return;
         localStorage.setItem('mapType', mapType);
         this.setMapType = mapType;
     }

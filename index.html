@@ -49,6 +49,22 @@
             }
         }
     </style>
+    <script>
+        var language = localStorage.getItem('language');
+        if(language === null) {
+            language = 'SQ';
+        }
+        function getText(key) {
+            var dataArray = Ext.application['locale_' + language];
+            for(var i = 0; i < dataArray.length; i++) {
+                if(dataArray[i][key] != undefined) {
+                    return dataArray[i][key];
+                }
+            }
+            console.log('---------- Please add localization message with key: [ ' + key + ' ]');
+            return key;
+        }
+    </script>
     <!-- The line below must be kept intact for Sencha Command to build your application -->
     <script id="microloader" type="text/javascript" src=".sencha/app/microloader/development.js"></script>
     <!-- Localization files -->
