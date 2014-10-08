@@ -32,6 +32,7 @@ Ext.define('KuTeFalem.view.Main', {
                         iconCls: 'search',
                         align: 'right',
                         handler: function(e, eOpts) {
+                            Ext.Viewport.hideMenu('left');
                             Ext.getCmp('mainPanel').hide();
                             Ext.Viewport.add(Ext.create('KuTeFalem.view.Search'))
                             Ext.getCmp('searchList').show();
