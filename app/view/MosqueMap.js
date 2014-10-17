@@ -36,6 +36,7 @@ Ext.define('KuTeFalem.view.MosqueMap', {
 
         // DEFAULT MAP OPTIONS & STYLES
         // ============================================
+        mapOptions.mapTypeId = AppConfig.getMapType();
         mapCmp.setMapOptions(mapOptions);
 
         // SET MOSQUE MARKERS
