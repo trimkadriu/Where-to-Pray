@@ -55,15 +55,17 @@ Ext.define('KuTeFalem.config.Config', {
         return key;
     },
 
-    setDefaultLanguage: function(language) {
+    setDefaultLanguage: function(language) { console.log(language);
         if(language != this.LANGUAGE.EN && language != this.LANGUAGE.SQ) return;
         localStorage.setItem('language', language);
-        this.setLanguage = language;
+        this.setLanguage(language);
+        KuTeFalem.app.restartApplication();
     },
 
     setDefaultMapType: function(mapType) {
         if(mapType != this.MAPTYPE.HYBRID && mapType != this.MAPTYPE.ROADMAP) return;
         localStorage.setItem('mapType', mapType);
-        this.setMapType = mapType;
+        this.setMapType(mapType);
+        KuTeFalem.app.restartApplication();
     }
 });

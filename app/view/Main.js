@@ -31,11 +31,13 @@ Ext.define('KuTeFalem.view.Main', {
                         xtype: 'button',
                         iconCls: 'search',
                         align: 'right',
-                        handler: function(e, eOpts) {
-                            Ext.Viewport.hideMenu('left');
-                            Ext.getCmp('mainPanel').hide();
-                            Ext.Viewport.add(Ext.create('KuTeFalem.view.Search'))
-                            Ext.getCmp('searchList').show();
+                        listeners: {
+                            tap: function (button, e, eOpts) {
+                                Ext.Viewport.hideMenu('left');
+                                Ext.getCmp('mainPanel').hide();
+                                Ext.Viewport.add(Ext.create('KuTeFalem.view.Search'))
+                                Ext.getCmp('searchList').show();
+                            }
                         }
                     }
                 ]
@@ -48,7 +50,12 @@ Ext.define('KuTeFalem.view.Main', {
                 iconCls: 'locate',
                 ui: 'action',
                 bottom: 20,
-                right: 20
+                right: 20,
+                listeners: {
+                    tap: function (button, e, eOpts) {
+                        console.log("IMPLEMENT LOCATE BUTTON");
+                    }
+                }
             }
         ],
 
